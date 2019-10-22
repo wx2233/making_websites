@@ -50,6 +50,11 @@ common_neighborhoods =
   count(neighbourhood, sort = TRUE) %>% 
   top_n(8) %>% 
   select(neighbourhood)
+
+inner_join(nyc_airbnb, common_neighborhoods, by = "neighbourhood") %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box",
+          colors = "Set2")
 ```
 
 ```{r}
@@ -57,5 +62,18 @@ nyc_airbnb %>%
   count(neighbourhood) %>% 
   mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
   plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
+```
+
+
+```{r}
+scatter_ggplot = 
+  nyc_airbnb %>%
+  ggplot(aes(x = lat, y = long, color = price)) +
+  geom_point(alpha = 0.25) +
+  scale_color_viridis() +
+  coord_cartesian() +
+  theme_classic()
+
+ggplotly(scatter_ggplot)
 ```
 

@@ -77,3 +77,5 @@ nyc_airbnb %>%
   plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
 ```
 
+
+##rmarkdown::render("dashboard_template.Rmd", output_format = "flexdashboard::flex_dashboard")

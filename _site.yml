@@ -10,7 +10,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<you@youremail.com>
     - icon: fa-github fa-lg
-      href: http://github.com/wx2233/xwj_p8105/
+      href: http://github.com/<xwj_p8105>/
 output:
   html_document:
     theme: journal

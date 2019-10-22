@@ -7,3 +7,37 @@ output:
 ---
 
 My name is xwj and I make websites _with_interaction graphics_ !!
+
+
+
+```{r}
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+set.seed(1)
+
+data(nyc_airbnb)
+nyc_airbnb = 
+  nyc_airbnb %>% 
+  mutate(rating = review_scores_location / 2) %>%
+  select(
+    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>%
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == "Manhattan",
+    room_type == "Entire home/apt",
+    price %in% 100:500)  %>% 
+  sample_n(5000)
+```
+
+
+```{r}
+nyc_airbnb %>% 
+  plot_ly(x = ~ lat, y = ~ long, type = "scatter", mode = "markers")
+
+```
+

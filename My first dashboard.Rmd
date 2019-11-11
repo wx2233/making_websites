@@ -78,4 +78,4 @@ nyc_airbnb %>%
 ```
 
 
-##rmarkdown::render("dashboard_template.Rmd", output_format = "flexdashboard::flex_dashboard")
+##rmarkdown::render("My first dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")

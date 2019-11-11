@@ -7,7 +7,7 @@ output:
     theme: journal
 ---
 
-# This is Jeff's awesome website
+# This is My awesome website
 
 ![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
 
